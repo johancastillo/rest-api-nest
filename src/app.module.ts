@@ -5,7 +5,7 @@ import { ProductModule } from './product/product.module';
 import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
-  imports: [ProductModule, MongooseModule.forRoot('mongodb://localhost:3001/rest-api', {
+  imports: [ProductModule, MongooseModule.forRoot('mongodb://localhost:3001/panel-web', {
     useNewUrlParser: true
   })],
   controllers: [AppController],

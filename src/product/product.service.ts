@@ -12,7 +12,7 @@ export class ProductService {
     }
 
     // Get all products
-    async getProducts(product): Promise<Product[]>{
+    async getProducts(): Promise<Product[]>{
         let products = await this.productModel.find()
         return products;
     }
@@ -26,8 +26,7 @@ export class ProductService {
     // Create product
     async createProduct(createProductDTO:CreateProductDTO){
         const product = await new this.productModel(createProductDTO);
-        const newProduct = await product.save();
-        return newProduct;
+        return await product.save();
     }
 
     async deleteProduct(productId:string):Promise<Product>{
